@@ -3,41 +3,31 @@
 using namespace std;
 
 int main()
- {int i,j,s;
-  cout<<"Enter any number: ";
-  cin>>s;
+{
 
-  for(i=s/2; i<s; i=i+2)
-   {
-    for(j=1;j<s-i;j=j+2)
-     {
-      cout<<" ";
-    }
-    for (j=1;j<i+1;j++)
-     {
-      cout<<"*";
-    }
-    for (j=1;j<s-i+1;j++)
-     {
-      cout<<" ";
-    }
-    for(j=1;j<i+1;j++) 
+    int n;
+    cout << "enter a number greater than 5 to print heart" << endl;
+    cin >> n;
+        while(n <= 5)
+        {
+            cout << "ERROR! INVALID INPUT" << endl << "ENTER INPUT AGAIN" << endl;
+            cin >> n;
+        }
+   
+    for (int row = 0; row < n; row++)
     {
-      cout<<"*";
+        for (int col = 0; col < n + 1; col++)
+            if ((row == 0 && col % 3 != 0) || (row == 1 && col % 3 == 0) || (row - col == 2) || (row + col == 8))
+            {
+             cout << ("*");
+            }
+            else
+            {
+                cout << (" ");
+            }
+
+        cout << ("\n");
+
     }
-    cout<<"\n";
-  }
-  for(i=s;i>0;i--) 
-  {
-    for(j=0;j<s-i;j++)
-     {
-      cout<<" ";
-    }
-    for(j=1;j<i*2;j++)
-     {
-      cout<<"*";
-    }
-    cout<<"\n";
-  }
   return 0;
 }
