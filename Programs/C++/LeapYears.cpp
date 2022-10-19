@@ -6,7 +6,7 @@ void printNext20LeapYears(int year)
       int count = 0;
       while (count < 20)
       {
-         if (year % 4 == 0)
+         if (year % 4 == 0 || year % 400 == 0)
          {
                cout << year << endl;
                count++;
