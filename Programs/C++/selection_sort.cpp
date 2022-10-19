@@ -2,31 +2,32 @@
 
 using namespace std;
 
+
 int SelectionSort(int arr[], int n)
 {
-    int s=0;
-    int e=n;
-    while(s<e){
-        int min=arr[s],x=s;
-        for(int j=s;j<e;j++)
+    int small, i, j;
+    for (i = 0; i < n - 1; i++)
+    {
+        small = i;
+        for (j = i + 1; j < n; j++)
         {
-            if(arr[j]<min)
+            if (arr[j] < arr[small])
             {
-                min=arr[j];
-                x=j;
+                small = j;
+
+                int temp = arr[small];
+                arr[small] = arr[i];
+                arr[i] = temp;
             }
         }
-        int temp=arr[s];
-        arr[s]=min;
-        arr[x]=temp;
-        s++;
     }
-
-    for(int i=0;i<n;i++){
-        cout<<arr[i]<<endl;
-    }
-
+        for (int k = 0; k < n; k++)
+        {
+            cout << arr[k] << endl;
+        }
+        return i;
 }
+
 
 int main()
 {
